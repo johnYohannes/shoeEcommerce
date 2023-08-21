@@ -1,0 +1,54 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <title>Customer list</title>
+  </head>
+  <body>
+	    <div class="container mt-5 w-75">
+	        <div th:replace="~{fragments/header :: header(list)}"></div>
+	          <div class="table-responsive mt-3">
+	       		<table class="table table-striped table-hover">
+				  <thead>
+				    <tr>
+				      <th scope="col">Id</th>
+				      <th scope="col">Name</th>
+				      <th scope="col">LastName</th>
+				      <th scope="col">Email</th>
+				      <th scope="col">Password</th>
+				      <th scope="col">Address</th>
+				      <th scope="col">City</th>
+	                  <th scope="col">PhoneNumber</th>
+				      <th scope="col">Sex</th>
+				      <th scope="col">#</th>
+				      <th scope="col">#</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr th:each="customer : ${customers}">
+				      <td th:text="${customer.idCustomer}"></td>
+				      <td th:text="${user.firstName} + ' ' + ${user.lastName}"></td>
+				      <td th:text="${#strings.toUpperCase(customer.lastName)}"></td>
+				      <td th:text="${#strings.toUpperCase(customer.email)}"></td>
+				      <td th:text="${#strings.toUpperCase(customer.password)}"></td>
+				      <td th:text="${#strings.toUpperCase(customer.address)}"></td>
+				      <td th:text="${#strings.toUpperCase(customer.city)}"></td>
+				      <td th:integer="${#integer.toUpperCase(customer.phonenumber)}"></td>
+				       <td th:text="${#strings.toUpperCase(customer.sex)}"></td>
+				      <td><a href="#">Update</a></td>
+				      <td><a href="#">Delete</a></td>
+				    </tr>
+				  </tbody>
+				</table>
+	          </div>
+	         </div>
+	           <div th:replace="~{fragments/header :: scripts}"></div>
+ </body>
+
+</html>

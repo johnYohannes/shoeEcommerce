@@ -1,4 +1,4 @@
-package org.comit.shoe.domain;
+package org.comit.shoe.Bean;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
