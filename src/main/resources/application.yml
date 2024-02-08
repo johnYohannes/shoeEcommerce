@@ -1,5 +1,19 @@
 
 #server
 
-server:
-  port: 9000
+#server:
+ # port: 8008
+
+# Logger
+#logging.level:
+ # web: DEBUG
+  '[org.comit.users]': DEBUG
+
+#spring:
+  #Database Settings
+ # datasource:
+ #   url: jdbc:mysql://localhost:3306/mystardb
+  #  username: root
+  #  password: root
+
+  

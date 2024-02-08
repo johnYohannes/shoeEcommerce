@@ -22,18 +22,34 @@ public class CustomerService {
 
 		return customers;
 	}
-	 public void createCustomer(Customer customer) {
+	public void createCustomer(Customer customer) {
 
-			this.createCustomer(customer);
-
-			this.customerDao.createCustomer(customer);
+	
+        this.customerDao.createCustomer(customer);
 	}
 	
+	 public Customer findcustomer(int idCustomer) {
+
+			return this.customerDao.findCustomer(idCustomer);
+	 }
+		
+	 public void updateCustomer(Customer customer) {
+			this.validateCustomer(customer);
+			this.customerDao.updateCustomer(customer);
+	 }
+		
+	 public void deleteCustomer(int idCustomerr) {
+
+			this.customerDao.deleteCustomer(idCustomerr);
+	 }
 	 
-	 private void validateCustomer(Customer customer) {
+	 
+	  private void validateCustomer(Customer customer) {
 			if(customer.getFirstName().isEmpty()||
 					customer.getLastName().isEmpty()){
-					throw new RuntimeException("Invalid User Data" + customer);
+					throw new RuntimeException("Invalid Customer Data" + customer);
 			       }
 	     }
+	
+	
 }

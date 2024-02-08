@@ -18,13 +18,13 @@
 				  <thead>
 				    <tr>
 				      <th scope="col">Id</th>
-				      <th scope="col">Name</th>
+				      <th scope="col">FirstName</th>
 				      <th scope="col">LastName</th>
 				      <th scope="col">Email</th>
 				      <th scope="col">Password</th>
 				      <th scope="col">Address</th>
 				      <th scope="col">City</th>
-	                  <th scope="col">PhoneNumber</th>
+	                  <th scope="col">Phone</th>
 				      <th scope="col">Sex</th>
 				      <th scope="col">#</th>
 				      <th scope="col">#</th>
@@ -33,16 +33,16 @@
 				  <tbody>
 				    <tr th:each="customer : ${customers}">
 				      <td th:text="${customer.idCustomer}"></td>
-				      <td th:text="${user.firstName} + ' ' + ${user.lastName}"></td>
-				      <td th:text="${#strings.toUpperCase(customer.lastName)}"></td>
+				      <td th:text="${customer.firstName} + ' ' + ${customer.lastName}"></td>
+				       <td th:text="${#strings.toUpperCase(customer.lastName)}"></td>
 				      <td th:text="${#strings.toUpperCase(customer.email)}"></td>
 				      <td th:text="${#strings.toUpperCase(customer.password)}"></td>
 				      <td th:text="${#strings.toUpperCase(customer.address)}"></td>
 				      <td th:text="${#strings.toUpperCase(customer.city)}"></td>
-				      <td th:integer="${#integer.toUpperCase(customer.phonenumber)}"></td>
-				       <td th:text="${#strings.toUpperCase(customer.sex)}"></td>
-				      <td><a href="#">Update</a></td>
-				      <td><a href="#">Delete</a></td>
+				      <td th:text="${customer.phone}"></td>
+				      <td th:text="${#strings.toUpperCase(customer.sex)}"></td>
+				       <td><a th:href="@{/update/} + ${customer.idCustomer}">Update</a></td>
+				      <td><a th:href="@{/delete/} + ${customer.idCustomer}">Delete</a></td>
 				    </tr>
 				  </tbody>
 				</table>

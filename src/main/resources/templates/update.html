@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	 <!-- Bootstrap CSS -->
+	        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+	   <title>Users System</title>
+	</head>
+	<body>
+		<div class="container mt-5 w-75">
+		        <div th:replace="~{fragments/header :: header(list)}"></div>
+				
+				 <div class="jumbotron bg-light border border-info mt-3 py-4" style="min-height: 450px">
+				   <h1> Update User</h1>
+				 <form action="/update" method="post">
+					  <div class="form-group">
+					    <label for="id">Id:</label>
+					    <input type="text" class="form-control" id="id" name="id" th:value="${customer?.idCustomer}" readonly>
+					  </div>
+					  <div class="form-group">
+					    <label for="first">First Name:</label>
+					    <input type="text" class="form-control" id="first" name="first" placeholder="Type in First Name" th:value="${customer?.firstName}" required>
+					  </div>
+					  <div class="form-group">
+					    <label for="last">Last Name:</label>
+					    <input type="text" class="form-control" id="last" name="last" placeholder="Type in Last Name" th:value="${customer?.lastName}" required>
+					  </div>
+					  <div class="form-group">
+					    <label for="email">Email:</label>
+					    <input type="text" class="form-control" id="email" name="email" placeholder="Type in Email" th:value="${customer?.email}" required>
+					  </div>
+					  <div class="form-group">
+					    <label for="password">Password:</label>
+					    <input type="text" class="form-control" id="password" name="password" placeholder="Type in Pasword"   th:value="${customer?.password}" required>
+					  </div>
+		              <div class="form-group">
+					    <label for="address">Address:</label>
+					    <input type="text" class="form-control" id="address" name="address" placeholder="Type in Address" th:value="${customer?.address}" required>
+					  </div>
+					  <div class="form-group">
+					    <label for="city">City</label>
+					    <input type="text" class="form-control" id="city" name="city" placeholder="Type in City" th:value="${customer?.city}" required>
+					  </div>
+					  <div class="form-group">
+					    <label for="phone">Phone:</label>
+					    <input type="text" class="form-control" id="phone" name="birth" placeholder="Type in Phone"  th:value="${customer?.phoneNumber}" required>
+					  </div>
+					  <div class="form-group">
+					    <label for="sex">Sex:</label>
+					    <input type="text" class="form-control" id="sex" name="sex" placeholder="Type in Email"  th:value="${customer?.usex}" required>
+					  </div>
+		
+		
+					  <button type="submit" class="btn btn-primary mt-2" style="min-width: 100px">Save</button>
+					</form>
+				</div>
+				
+		    </div>
+		
+		    <div th:replace="~{fragments/header :: scripts}"></div>
+	</body>
+</html>
